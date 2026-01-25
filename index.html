@@ -48,8 +48,8 @@
     }
     .info-row {
       display: flex;
-      gap: 3rem;
-      margin-bottom: 1.5rem;
+      gap: 2rem;
+      align-items: center;
     }
     .label {
       color: #b22222;
@@ -108,34 +108,56 @@
       justify-content: center;
       align-items: center;
       z-index: 1000;
-      cursor: pointer;
     }
     #lightbox img {
-      max-width: 90%;
-      max-height: 90%;
+      max-width: 80%;
+      max-height: 85%;
       border-radius: 4px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 40px;
+      cursor: pointer;
+    }
+    .lightbox-prev, .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      font-size: 50px;
+      cursor: pointer;
+      padding: 20px;
+      user-select: none;
+    }
+    .lightbox-prev { left: 20px; }
+    .lightbox-next { right: 20px; }
+    .lightbox-prev:hover, .lightbox-next:hover, .lightbox-close:hover {
+      color: #b22222;
     }
   </style>
 </head>
 <body>
   <div class="container">
 
-    <div class="section-title">Bonan (Jerry)  Yang</div>
+    <div class="section-title">Bonan (Jerry) Yang</div>
     <div class="bio">
       <img src="me.jpg" alt="Bonan Yang" class="photo">
       <div class="bio-content">
         <p class="bio-text">
           Hello! I am Bonan Yang, a Computer Science Ph.D. candidate at Southern Illinois University Carbondale, advised by <a href="https://www.cs.siue.edu/~gercal/" target="_blank">Dr. Gunes Ercal</a>. I specialize in complex network analysis, knowledge graph systems, and graph machine learning. My work spans representation learning on large-scale graphs, semantic reasoning over knowledge bases, and building graph infrastructure for real-world applications.
         </p>
-<div class="info-row">
-  <div class="info-item">
-    <span class="label">Email:</span> yangbonan11@gmail.com
-  </div>
-  <div class="info-item">
-    <span class="label">Base:</span> Chicago Area, IL
-  </div>
-  <a href="resume.pdf" target="_blank" class="btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Résumé</a>
-</div>
+        <div class="info-row">
+          <div class="info-item">
+            <span class="label">Email:</span> yangbonan11@gmail.com
+          </div>
+          <div class="info-item">
+            <span class="label">Base:</span> Chicago Area, IL
+          </div>
+          <a href="resume.pdf" target="_blank" class="btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">Résumé</a>
+        </div>
       </div>
     </div>
 
@@ -179,11 +201,11 @@
         <span class="label">3D Object Quality Assessment via Graph Learning</span> (2024 – Present)<br>
         Transformed 3D printing point clouds into graphs. Designed Graph Autoencoder with contrastive learning for similarity retrieval and deviation localization in personalized manufacturing.
       </p>
-              <p style="margin-bottom: 0.8rem;">
+
+      <p style="margin-bottom: 0.8rem;">
         <span class="label">Curriculum-Industry Skill Gap Analysis</span> (2025 – Present)<br>
         Built knowledge graph integrating O*NET skill ontology with STEM course syllabi (462 courses, 3556 skills, 770 jobs). Applied semantic encoding and multi-hop reasoning for course-skill-job alignment. Providing data-driven insights for Illinois State Board of Education.
       </p>
-
     </div>
 
     <div class="section">
@@ -197,29 +219,63 @@
       </div>
 
       <div class="photo-wall">
-        <img src="myphotos/1.jpg" onclick="openPhoto(this)" alt="photo">
-        <img src="myphotos/2.png" onclick="openPhoto(this)" alt="photo">
-        <img src="myphotos/3.jpg" onclick="openPhoto(this)" alt="photo">
-        <img src="myphotos/4.jpg" onclick="openPhoto(this)" alt="photo">
-        <img src="myphotos/5.jpg" onclick="openPhoto(this)" alt="photo">
-        <img src="myphotos/6.jpg" onclick="openPhoto(this)" alt="photo">
+        <img src="myphotos/1.jpg" onclick="openPhoto(0)" alt="photo">
+        <img src="myphotos/2.png" onclick="openPhoto(1)" alt="photo">
+        <img src="myphotos/3.jpg" onclick="openPhoto(2)" alt="photo">
+        <img src="myphotos/4.jpg" onclick="openPhoto(3)" alt="photo">
+        <img src="myphotos/5.jpg" onclick="openPhoto(4)" alt="photo">
+        <img src="myphotos/6.jpg" onclick="openPhoto(5)" alt="photo">
       </div>
     </div>
 
   </div>
 
-  <div id="lightbox" onclick="closeLightbox()">
+  <div id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">×</span>
+    <span class="lightbox-prev" onclick="changePhoto(-1)">❮</span>
     <img id="lightbox-img" src="">
+    <span class="lightbox-next" onclick="changePhoto(1)">❯</span>
   </div>
 
   <script>
-    function openPhoto(img) {
-      document.getElementById('lightbox-img').src = img.src;
+    const photos = [
+      'myphotos/1.jpg',
+      'myphotos/2.png',
+      'myphotos/3.jpg',
+      'myphotos/4.jpg',
+      'myphotos/5.jpg',
+      'myphotos/6.jpg'
+    ];
+    let currentIndex = 0;
+
+    function openPhoto(index) {
+      currentIndex = index;
+      document.getElementById('lightbox-img').src = photos[currentIndex];
       document.getElementById('lightbox').style.display = 'flex';
     }
+
     function closeLightbox() {
       document.getElementById('lightbox').style.display = 'none';
     }
+
+    function changePhoto(direction) {
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = photos.length - 1;
+      if (currentIndex >= photos.length) currentIndex = 0;
+      document.getElementById('lightbox-img').src = photos[currentIndex];
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (document.getElementById('lightbox').style.display === 'flex') {
+        if (e.key === 'ArrowLeft') changePhoto(-1);
+        if (e.key === 'ArrowRight') changePhoto(1);
+        if (e.key === 'Escape') closeLightbox();
+      }
+    });
+
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
   </script>
 </body>
 </html>
