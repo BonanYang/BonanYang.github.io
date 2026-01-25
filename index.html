@@ -13,7 +13,7 @@
     body {
       font-family: 'Courier New', Courier, monospace;
       background: #f5f5f5;
-      color: #333;
+      color: #000;
       line-height: 1.8;
     }
     .container {
@@ -21,12 +21,15 @@
       margin: 0 auto;
       padding: 4rem 2rem;
     }
+    .section {
+      margin-top: 3rem;
+    }
     .section-title {
       font-size: 0.9rem;
       font-weight: 700;
       letter-spacing: 0.05em;
       color: #000;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
     .bio {
       display: flex;
@@ -42,14 +45,13 @@
     }
     .bio-text {
       margin-bottom: 2rem;
-      color: #000;
     }
     .info-row {
       display: flex;
       gap: 3rem;
       margin-bottom: 1.5rem;
     }
-    .info-item .label {
+    .label {
       color: #b22222;
     }
     .btn {
@@ -69,10 +71,14 @@
     a:hover {
       text-decoration: underline;
     }
+    .skills-item {
+      margin-bottom: 1.5rem;
+    }
   </style>
 </head>
 <body>
   <div class="container">
+    
     <div class="section-title">BRIEF BIO</div>
     <div class="bio">
       <img src="me.jpg" alt="Bonan Yang" class="photo">
@@ -91,15 +97,25 @@
         <a href="resume.pdf" class="btn">Download Résumé</a>
       </div>
     </div>
-    <div class="section" style="margin-top: 3rem;">
+
+    <div class="section">
       <div class="section-title">RESEARCH INTERESTS</div>
-      <p style="color: #000;">Graph representation learning, knowledge graph systems, scalable graph infrastructure.</p>
+      <p>Graph representation learning, knowledge graph systems, and scalable graph infrastructure.</p>
     </div>
-      </div>
 
+    <div class="section">
+      <div class="section-title">TECHNICAL SKILLS</div>
+      <p class="skills-item">
+        <span class="label">Specializations:</span> Graph Neural Networks (GCN, GraphSAGE, GAT, Graph Autoencoders, Spatio-temporal GNNs), Knowledge Graphs, Complex Network Analysis, NLP & LLM, GraphRAG, Vector Databases, End-to-End ML Deployment
+      </p>
+      <p class="skills-item">
+        <span class="label">Languages & Databases:</span> Python, C/C++, R, SQL, Cypher, Neo4j, Milvus, Pinecone, HDFS
+      </p>
+      <p class="skills-item">
+        <span class="label">Platforms & Tools:</span> Linux, Docker, AWS, GCP, Apache Spark, PyTorch, PyG, Transformers, vLLM/SGLang, CUDA, Git, NetworkX, Gephi
+      </p>
+    </div>
 
-
-
-
+  </div>
 </body>
 </html>
