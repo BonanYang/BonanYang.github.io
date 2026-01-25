@@ -59,6 +59,19 @@
     .info-box .type {
       color: #666;
     }
+    #refresh-btn {
+      margin-top: 0.5rem;
+      padding: 0.3rem 0.6rem;
+      font-family: 'Courier New', monospace;
+      font-size: 0.75rem;
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      cursor: pointer;
+      width: 100%;
+    }
+    #refresh-btn:hover {
+      background: #eee;
+    }
   </style>
 </head>
 <body>
@@ -73,6 +86,7 @@
   <div class="info-box" id="info-box">
     <h3 id="info-label">Click a node</h3>
     <div class="type" id="info-type">-</div>
+    <button id="refresh-btn">↺ Reset</button>
   </div>
 
   <script>
@@ -184,6 +198,28 @@
           if (evt.target === cy) {
             cy.fit(50);
           }
+        });
+
+        // Reset 按钮
+        document.getElementById('refresh-btn').addEventListener('click', function() {
+          cy.elements().remove();
+          
+          const courseNodes = allNodes
+            .filter(n => n.type === 'Course')
+            .map(n => ({
+              data: { id: String(n.id), label: n.label, type: n.type }
+            }));
+          
+          cy.add(courseNodes);
+          expandedNodes.clear();
+          
+          cy.layout({
+            name: 'circle',
+            padding: 100
+          }).run();
+          
+          document.getElementById('info-label').textContent = 'Click a node';
+          document.getElementById('info-type').textContent = '-';
         });
 
         cy.on('tap', 'node', function(evt) {
