@@ -12,56 +12,91 @@
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #fafafa;
+      background: #f5f5f5;
       color: #333;
+      line-height: 1.7;
     }
-    .profile {
-      text-align: center;
-      padding: 2rem;
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+    .section-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+    .bio {
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
     }
     .photo {
-      width: 180px;
-      height: 180px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
+      flex-shrink: 0;
+    }
+    .bio-content h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .bio-text {
       margin-bottom: 1.5rem;
-      border: 4px solid #fff;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      color: #444;
     }
-    h1 {
-      font-size: 2rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
+    .info-row {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 1.5rem;
     }
-    .title {
-      color: #666;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
+    .info-item span:first-child {
+      color: #b22222;
+      font-weight: 500;
     }
-    .advisor {
-      color: #666;
-      font-size: 1rem;
+    .btn {
+      display: inline-block;
+      background: #b22222;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      font-size: 0.9rem;
     }
-    .advisor a {
+    .btn:hover {
+      background: #8b0000;
+    }
+    a {
       color: #0066cc;
       text-decoration: none;
     }
-    .advisor a:hover {
+    a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="profile">
-    <img src="me.jpg" alt="Bonan Yang" class="photo">
-    <h1>Bonan Yang</h1>
-    <p class="title">PhD Candidate in Computer Science</p>
-    <p class="title">Southern Illinois University Edwardsville</p>
-    <p class="advisor">Advisor: <a href="https://www.cs.siue.edu/~gercal/" target="_blank">Dr. Gunes Ercal</a></p>
+  <div class="container">
+    <div class="section-title">BRIEF BIO</div>
+    <div class="bio">
+      <img src="me.jpg" alt="Bonan Yang" class="photo">
+      <div class="bio-content">
+        <p class="bio-text">
+          Hello! I am Bonan Yang, a Computer Science Ph.D. candidate at Southern Illinois University Edwardsville, advised by <a href="https://www.cs.siue.edu/~gercal/" target="_blank">Dr. Gunes Ercal</a>. My research focuses on curriculum-industry alignment analysis using graph neural networks and knowledge graphs, with the goal of quantifying the gap between university CS curricula and evolving industry skill demands.
+        </p>
+        <div class="info-row">
+          <div class="info-item">
+            <span>Email:</span> yangbonan11@gmail.com
+          </div>
+          <div class="info-item">
+            <span>Base:</span> Edwardsville, IL
+          </div>
+        </div>
+        <a href="resume.pdf" class="btn">Download Résumé</a>
+      </div>
+    </div>
   </div>
 </body>
 </html>
