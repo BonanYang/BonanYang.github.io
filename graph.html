@@ -129,47 +129,62 @@
           container: document.getElementById('cy'),
           elements: courseNodes,
           style: [
-            {
-              selector: 'node',
-              style: {
-                'label': 'data(label)',
-                'text-valign': 'center',
-                'text-halign': 'center',
-                'font-size': '11px',
-                'font-family': 'Courier New, monospace',
-                'text-wrap': 'wrap',
-                'text-max-width': '100px',
-                'width': 50,
-                'height': 50,
-                'border-width': 2,
-                'border-color': '#fff'
-              }
-            },
-            {
-              selector: 'node[type="Course"]',
-              style: {
-                'background-color': '#8B5CF6',
-                'color': '#fff',
-                'width': 60,
-                'height': 60
-              }
-            },
+       {
+  selector: 'node',
+  style: {
+    'label': 'data(label)',
+    'text-valign': 'bottom',
+    'text-halign': 'center',
+    'text-margin-y': 5,
+    'font-size': '9px',           // 字小
+    'font-family': 'Courier New, monospace',
+    'color': '#333',
+    'text-wrap': 'wrap',
+    'text-max-width': '100px',
+    'width': 60,                  // 节点大
+    'height': 60,
+    'border-width': 2,
+    'border-color': '#fff'
+  }
+},
+{
+  selector: 'node[type="Course"]',
+  style: {
+    'background-color': '#8B5CF6',
+    'width': 70,                  // 更大
+    'height': 70
+  }
+},
+{
+  selector: 'node[type="Skill"]',
+  style: {
+    'background-color': '#22C55E',
+    'width': 55,
+    'height': 55
+  }
+},
+{
+  selector: 'node[type="Job"]',
+  style: {
+    'background-color': '#D4A574',
+    'width': 50,
+    'height': 50
+  }
+},
             {
               selector: 'node[type="Skill"]',
               style: {
                 'background-color': '#22C55E',
-                'color': '#fff',
-                'width': 45,
-                'height': 45
+                'width': 40,
+                'height': 40
               }
             },
             {
               selector: 'node[type="Job"]',
               style: {
                 'background-color': '#D4A574',
-                'color': '#000',
-                'width': 40,
-                'height': 40
+                'width': 35,
+                'height': 35
               }
             },
             {
@@ -207,7 +222,7 @@
           ],
           layout: {
             name: 'circle',
-            padding: 50
+            padding: 80
           }
         });
 
@@ -298,7 +313,7 @@
               return 1;
             },
             levelWidth: function() { return 1; },
-            padding: 50,
+            padding: 80,
             animate: true,
             animationDuration: 300
           }).run();
@@ -343,7 +358,7 @@
               return 1;
             },
             levelWidth: function() { return 1; },
-            padding: 50,
+            padding: 80,
             animate: true,
             animationDuration: 300
           }).run();
