@@ -1,0 +1,1050 @@
+﻿[
+  {
+    "graph": {
+      "edges": [
+        {
+          "source": 0,
+          "target": 428,
+          "type": "MATCHES_SKILL"
+        },
+        {
+          "source": 0,
+          "target": 450,
+          "type": "MATCHES_SKILL"
+        },
+        {
+          "source": 0,
+          "target": 453,
+          "type": "MATCHES_SKILL"
+        },
+        {
+          "source": 0,
+          "target": 472,
+          "type": "MATCHES_SKILL"
+        },
+        {
+          "source": 0,
+          "target": 474,
+          "type": "MATCHES_SKILL"
+        },
+        {
+          "source": 664,
+          "target": 406,
+          "type": "MATCHES_SKILL"
+        },
+        {
+          "source": 664,
+          "target": 428,
+          "type": "MATCHES_SKILL"
+        },
+        {
+          "source": 664,
+          "target": 432,
+          "type": "MATCHES_SKILL"
+        },
+        {
+          "source": 664,
+          "target": 450,
+          "type": "MATCHES_SKILL"
+        },
+        {
+          "source": 664,
+          "target": 463,
+          "type": "MATCHES_SKILL"
+        },
+        {
+          "source": 672,
+          "target": 398,
+          "type": "MATCHES_SKILL"
+        },
+        {
+          "source": 672,
+          "target": 428,
+          "type": "MATCHES_SKILL"
+        },
+        {
+          "source": 672,
+          "target": 450,
+          "type": "MATCHES_SKILL"
+        },
+        {
+          "source": 672,
+          "target": 472,
+          "type": "MATCHES_SKILL"
+        },
+        {
+          "source": 672,
+          "target": 483,
+          "type": "MATCHES_SKILL"
+        },
+        {
+          "source": 428,
+          "target": 551,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 428,
+          "target": 563,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 428,
+          "target": 591,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 450,
+          "target": 512,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 450,
+          "target": 522,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 450,
+          "target": 540,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 509,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 510,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 512,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 517,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 518,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 519,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 521,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 522,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 523,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 524,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 525,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 528,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 531,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 532,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 534,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 535,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 536,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 537,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 538,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 539,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 540,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 541,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 543,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 551,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 552,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 563,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 564,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 565,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 566,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 569,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 574,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 575,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 578,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 582,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 601,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 602,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 603,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 605,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 606,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 607,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 608,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 609,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 611,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 614,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 615,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 616,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 618,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 619,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 620,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 622,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 626,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 627,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 628,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 630,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 636,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 639,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 641,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 647,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 653,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 453,
+          "target": 657,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 472,
+          "target": 512,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 472,
+          "target": 540,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 538,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 539,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 540,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 552,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 563,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 564,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 565,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 569,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 570,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 572,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 591,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 592,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 603,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 604,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 605,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 614,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 615,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 617,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 619,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 621,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 628,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 630,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 632,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 634,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 635,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 643,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 646,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 648,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 474,
+          "target": 653,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 406,
+          "target": 512,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 406,
+          "target": 540,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 432,
+          "target": 548,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 463,
+          "target": 559,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 398,
+          "target": 540,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 483,
+          "target": 512,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 483,
+          "target": 522,
+          "type": "REQUIRED_BY"
+        },
+        {
+          "source": 483,
+          "target": 540,
+          "type": "REQUIRED_BY"
+        }
+      ],
+      "nodes": [
+        {
+          "id": 0,
+          "label": "CS490ML",
+          "type": "Course"
+        },
+        {
+          "id": 664,
+          "label": "CS438",
+          "type": "Course"
+        },
+        {
+          "id": 672,
+          "label": "CS490DL",
+          "type": "Course"
+        },
+        {
+          "id": 428,
+          "label": "Neural network modeling software",
+          "type": "Skill"
+        },
+        {
+          "id": 450,
+          "label": "PyTorch",
+          "type": "Skill"
+        },
+        {
+          "id": 453,
+          "label": "R",
+          "type": "Skill"
+        },
+        {
+          "id": 472,
+          "label": "Scikit-learn",
+          "type": "Skill"
+        },
+        {
+          "id": 474,
+          "label": "Statistical software",
+          "type": "Skill"
+        },
+        {
+          "id": 406,
+          "label": "Mathematical software",
+          "type": "Skill"
+        },
+        {
+          "id": 432,
+          "label": "Object oriented programming software",
+          "type": "Skill"
+        },
+        {
+          "id": 463,
+          "label": "Robot Framework",
+          "type": "Skill"
+        },
+        {
+          "id": 398,
+          "label": "Keras",
+          "type": "Skill"
+        },
+        {
+          "id": 483,
+          "label": "TensorFlow",
+          "type": "Skill"
+        },
+        {
+          "id": 551,
+          "label": "Bioengineers and Biomedical Engineers",
+          "type": "Job"
+        },
+        {
+          "id": 563,
+          "label": "Industrial Engineers",
+          "type": "Job"
+        },
+        {
+          "id": 591,
+          "label": "Environmental Engineering Technologists and Technicians",
+          "type": "Job"
+        },
+        {
+          "id": 512,
+          "label": "Computer and Information Research Scientists",
+          "type": "Job"
+        },
+        {
+          "id": 522,
+          "label": "Software Developers",
+          "type": "Job"
+        },
+        {
+          "id": 540,
+          "label": "Data Scientists",
+          "type": "Job"
+        },
+        {
+          "id": 509,
+          "label": "Computer Systems Analysts",
+          "type": "Job"
+        },
+        {
+          "id": 510,
+          "label": "Health Informatics Specialists",
+          "type": "Job"
+        },
+        {
+          "id": 517,
+          "label": "Database Administrators",
+          "type": "Job"
+        },
+        {
+          "id": 518,
+          "label": "Database Architects",
+          "type": "Job"
+        },
+        {
+          "id": 519,
+          "label": "Data Warehousing Specialists",
+          "type": "Job"
+        },
+        {
+          "id": 521,
+          "label": "Computer Programmers",
+          "type": "Job"
+        },
+        {
+          "id": 523,
+          "label": "Software Quality Assurance Analysts and Testers",
+          "type": "Job"
+        },
+        {
+          "id": 524,
+          "label": "Web Developers",
+          "type": "Job"
+        },
+        {
+          "id": 525,
+          "label": "Web and Digital Interface Designers",
+          "type": "Job"
+        },
+        {
+          "id": 528,
+          "label": "Geographic Information Systems Technologists and Technicians",
+          "type": "Job"
+        },
+        {
+          "id": 531,
+          "label": "Information Security Engineers",
+          "type": "Job"
+        },
+        {
+          "id": 532,
+          "label": "Digital Forensics Analysts",
+          "type": "Job"
+        },
+        {
+          "id": 534,
+          "label": "Computer Systems Engineers/Architects",
+          "type": "Job"
+        },
+        {
+          "id": 535,
+          "label": "Information Technology Project Managers",
+          "type": "Job"
+        },
+        {
+          "id": 536,
+          "label": "Mathematicians",
+          "type": "Job"
+        },
+        {
+          "id": 537,
+          "label": "Operations Research Analysts",
+          "type": "Job"
+        },
+        {
+          "id": 538,
+          "label": "Statisticians",
+          "type": "Job"
+        },
+        {
+          "id": 539,
+          "label": "Biostatisticians",
+          "type": "Job"
+        },
+        {
+          "id": 541,
+          "label": "Business Intelligence Analysts",
+          "type": "Job"
+        },
+        {
+          "id": 543,
+          "label": "Bioinformatics Technicians",
+          "type": "Job"
+        },
+        {
+          "id": 552,
+          "label": "Chemical Engineers",
+          "type": "Job"
+        },
+        {
+          "id": 564,
+          "label": "Human Factors Engineers and Ergonomists",
+          "type": "Job"
+        },
+        {
+          "id": 565,
+          "label": "Validation Engineers",
+          "type": "Job"
+        },
+        {
+          "id": 566,
+          "label": "Manufacturing Engineers",
+          "type": "Job"
+        },
+        {
+          "id": 569,
+          "label": "Mechanical Engineers",
+          "type": "Job"
+        },
+        {
+          "id": 574,
+          "label": "Petroleum Engineers",
+          "type": "Job"
+        },
+        {
+          "id": 575,
+          "label": "Energy Engineers, Except Wind and Solar",
+          "type": "Job"
+        },
+        {
+          "id": 578,
+          "label": "Photonics Engineers",
+          "type": "Job"
+        },
+        {
+          "id": 582,
+          "label": "Solar Energy Systems Engineers",
+          "type": "Job"
+        },
+        {
+          "id": 601,
+          "label": "Food Scientists and Technologists",
+          "type": "Job"
+        },
+        {
+          "id": 602,
+          "label": "Soil and Plant Scientists",
+          "type": "Job"
+        },
+        {
+          "id": 603,
+          "label": "Biochemists and Biophysicists",
+          "type": "Job"
+        },
+        {
+          "id": 605,
+          "label": "Zoologists and Wildlife Biologists",
+          "type": "Job"
+        },
+        {
+          "id": 606,
+          "label": "Bioinformatics Scientists",
+          "type": "Job"
+        },
+        {
+          "id": 607,
+          "label": "Molecular and Cellular Biologists",
+          "type": "Job"
+        },
+        {
+          "id": 608,
+          "label": "Geneticists",
+          "type": "Job"
+        },
+        {
+          "id": 609,
+          "label": "Biologists",
+          "type": "Job"
+        },
+        {
+          "id": 611,
+          "label": "Range Managers",
+          "type": "Job"
+        },
+        {
+          "id": 614,
+          "label": "Epidemiologists",
+          "type": "Job"
+        },
+        {
+          "id": 615,
+          "label": "Medical Scientists, Except Epidemiologists",
+          "type": "Job"
+        },
+        {
+          "id": 616,
+          "label": "Astronomers",
+          "type": "Job"
+        },
+        {
+          "id": 618,
+          "label": "Atmospheric and Space Scientists",
+          "type": "Job"
+        },
+        {
+          "id": 619,
+          "label": "Chemists",
+          "type": "Job"
+        },
+        {
+          "id": 620,
+          "label": "Materials Scientists",
+          "type": "Job"
+        },
+        {
+          "id": 622,
+          "label": "Climate Change Policy Analysts",
+          "type": "Job"
+        },
+        {
+          "id": 626,
+          "label": "Hydrologists",
+          "type": "Job"
+        },
+        {
+          "id": 627,
+          "label": "Remote Sensing Scientists and Technologists",
+          "type": "Job"
+        },
+        {
+          "id": 628,
+          "label": "Economists",
+          "type": "Job"
+        },
+        {
+          "id": 630,
+          "label": "Survey Researchers",
+          "type": "Job"
+        },
+        {
+          "id": 636,
+          "label": "Sociologists",
+          "type": "Job"
+        },
+        {
+          "id": 639,
+          "label": "Geographers",
+          "type": "Job"
+        },
+        {
+          "id": 641,
+          "label": "Political Scientists",
+          "type": "Job"
+        },
+        {
+          "id": 647,
+          "label": "Chemical Technicians",
+          "type": "Job"
+        },
+        {
+          "id": 653,
+          "label": "Social Science Research Assistants",
+          "type": "Job"
+        },
+        {
+          "id": 657,
+          "label": "Remote Sensing Technicians",
+          "type": "Job"
+        },
+        {
+          "id": 570,
+          "label": "Fuel Cell Engineers",
+          "type": "Job"
+        },
+        {
+          "id": 572,
+          "label": "Mining and Geological Engineers, Including Mining Safety Engineers",
+          "type": "Job"
+        },
+        {
+          "id": 592,
+          "label": "Industrial Engineering Technologists and Technicians",
+          "type": "Job"
+        },
+        {
+          "id": 604,
+          "label": "Microbiologists",
+          "type": "Job"
+        },
+        {
+          "id": 617,
+          "label": "Physicists",
+          "type": "Job"
+        },
+        {
+          "id": 621,
+          "label": "Environmental Scientists and Specialists, Including Health",
+          "type": "Job"
+        },
+        {
+          "id": 632,
+          "label": "Clinical and Counseling Psychologists",
+          "type": "Job"
+        },
+        {
+          "id": 634,
+          "label": "Neuropsychologists",
+          "type": "Job"
+        },
+        {
+          "id": 635,
+          "label": "Clinical Neuropsychologists",
+          "type": "Job"
+        },
+        {
+          "id": 643,
+          "label": "Agricultural Technicians",
+          "type": "Job"
+        },
+        {
+          "id": 646,
+          "label": "Biological Technicians",
+          "type": "Job"
+        },
+        {
+          "id": 648,
+          "label": "Environmental Science and Protection Technicians, Including Health",
+          "type": "Job"
+        },
+        {
+          "id": 548,
+          "label": "Geodetic Surveyors",
+          "type": "Job"
+        },
+        {
+          "id": 559,
+          "label": "Radio Frequency Identification Device Specialists",
+          "type": "Job"
+        }
+      ]
+    }
+  }
+]
