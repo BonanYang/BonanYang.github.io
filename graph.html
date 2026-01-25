@@ -31,9 +31,6 @@
       color: #b22222;
       text-decoration: none;
     }
-    .header a:hover {
-      text-decoration: underline;
-    }
     #cy {
       width: 100%;
       height: calc(100vh - 120px);
@@ -60,20 +57,29 @@
     .course { background: #8B5CF6; }
     .skill { background: #22C55E; }
     .job { background: #D4A574; }
-    .info {
+    .info-box {
       position: absolute;
       top: 80px;
       right: 20px;
       background: white;
       padding: 1rem;
       border: 1px solid #ddd;
-      max-width: 300px;
+      max-width: 280px;
       font-size: 0.85rem;
-      display: none;
     }
-    .info.show { display: block; }
-    .info h3 { margin-bottom: 0.5rem; }
-    .info .type { color: #666; margin-bottom: 0.5rem; }
+    .info-box h3 {
+      margin-bottom: 0.5rem;
+      word-wrap: break-word;
+    }
+    .info-box .type {
+      color: #666;
+      margin-bottom: 0.5rem;
+    }
+    .info-box .hint {
+      color: #999;
+      font-size: 0.75rem;
+      margin-top: 0.5rem;
+    }
   </style>
 </head>
 <body>
@@ -88,40 +94,40 @@
     <div class="legend-item"><div class="legend-color course"></div> Course</div>
     <div class="legend-item"><div class="legend-color skill"></div> Skill</div>
     <div class="legend-item"><div class="legend-color job"></div> Job</div>
-    <div class="legend-item" style="margin-left: auto; color: #666;">Drag to move • Scroll to zoom • Click node for details</div>
+    <div class="legend-item" style="margin-left: auto; color: #666;">Click node to expand/collapse • Drag to move • Scroll to zoom</div>
   </div>
 
-  <div class="info" id="info">
-    <h3 id="info-label"></h3>
-    <div class="type" id="info-type"></div>
+  <div class="info-box" id="info-box">
+    <h3 id="info-label">Click a node</h3>
+    <div class="type" id="info-type">-</div>
+    <div class="hint" id="info-hint">Click Course to see Skills, click Skill to see Jobs</div>
   </div>
 
   <script>
+    let cy;
+    let allNodes = [];
+    let allEdges = [];
+    let expandedNodes = new Set();
+
     fetch('graph.json')
       .then(res => res.json())
       .then(data => {
         const graphData = data[0].graph;
         
-        const nodes = graphData.nodes.map(n => ({
-          data: { 
-            id: String(n.id), 
-            label: n.label, 
-            type: n.type 
-          }
-        }));
-        
-        const edges = graphData.edges.map((e, i) => ({
-          data: { 
-            id: 'e' + i, 
-            source: String(e.source), 
-            target: String(e.target),
-            type: e.type
-          }
-        }));
+        // Store all data
+        allNodes = graphData.nodes;
+        allEdges = graphData.edges;
 
-        const cy = cytoscape({
+        // Start with only Course nodes
+        const courseNodes = allNodes
+          .filter(n => n.type === 'Course')
+          .map(n => ({
+            data: { id: String(n.id), label: n.label, type: n.type }
+          }));
+
+        cy = cytoscape({
           container: document.getElementById('cy'),
-          elements: { nodes, edges },
+          elements: courseNodes,
           style: [
             {
               selector: 'node',
@@ -129,39 +135,54 @@
                 'label': 'data(label)',
                 'text-valign': 'center',
                 'text-halign': 'center',
-                'font-size': '10px',
+                'font-size': '11px',
                 'font-family': 'Courier New, monospace',
                 'text-wrap': 'wrap',
-                'text-max-width': '80px',
-                'width': 40,
-                'height': 40
+                'text-max-width': '100px',
+                'width': 50,
+                'height': 50,
+                'border-width': 2,
+                'border-color': '#fff'
               }
             },
             {
               selector: 'node[type="Course"]',
               style: {
                 'background-color': '#8B5CF6',
-                'color': '#fff'
+                'color': '#fff',
+                'width': 60,
+                'height': 60
               }
             },
             {
               selector: 'node[type="Skill"]',
               style: {
                 'background-color': '#22C55E',
-                'color': '#fff'
+                'color': '#fff',
+                'width': 45,
+                'height': 45
               }
             },
             {
               selector: 'node[type="Job"]',
               style: {
                 'background-color': '#D4A574',
-                'color': '#000'
+                'color': '#000',
+                'width': 40,
+                'height': 40
+              }
+            },
+            {
+              selector: 'node.expanded',
+              style: {
+                'border-width': 4,
+                'border-color': '#000'
               }
             },
             {
               selector: 'edge',
               style: {
-                'width': 1,
+                'width': 2,
                 'line-color': '#ccc',
                 'target-arrow-color': '#ccc',
                 'target-arrow-shape': 'triangle',
@@ -185,30 +206,148 @@
             }
           ],
           layout: {
-            name: 'cose',
-            nodeRepulsion: 8000,
-            idealEdgeLength: 100,
-            animate: false
+            name: 'circle',
+            padding: 50
           }
         });
 
-        // Click node to show info
-        const infoBox = document.getElementById('info');
-        const infoLabel = document.getElementById('info-label');
-        const infoType = document.getElementById('info-type');
-
+        // Click to expand/collapse
         cy.on('tap', 'node', function(evt) {
           const node = evt.target;
-          infoLabel.textContent = node.data('label');
-          infoType.textContent = node.data('type');
-          infoBox.classList.add('show');
-        });
-
-        cy.on('tap', function(evt) {
-          if (evt.target === cy) {
-            infoBox.classList.remove('show');
+          const nodeId = parseInt(node.id());
+          const nodeType = node.data('type');
+          
+          // Update info box
+          document.getElementById('info-label').textContent = node.data('label');
+          document.getElementById('info-type').textContent = nodeType;
+          
+          if (expandedNodes.has(nodeId)) {
+            // Collapse: remove children
+            collapseNode(nodeId, nodeType);
+            node.removeClass('expanded');
+            expandedNodes.delete(nodeId);
+            document.getElementById('info-hint').textContent = 'Click to expand';
+          } else {
+            // Expand: add children
+            expandNode(nodeId, nodeType);
+            node.addClass('expanded');
+            expandedNodes.add(nodeId);
+            document.getElementById('info-hint').textContent = 'Click to collapse';
           }
         });
+
+        function expandNode(nodeId, nodeType) {
+          let newNodes = [];
+          let newEdges = [];
+
+          if (nodeType === 'Course') {
+            // Find skills connected to this course
+            const skillEdges = allEdges.filter(e => 
+              e.source === nodeId && e.type === 'MATCHES_SKILL'
+            );
+            
+            skillEdges.forEach(e => {
+              const skillNode = allNodes.find(n => n.id === e.target);
+              if (skillNode && !cy.getElementById(String(e.target)).length) {
+                newNodes.push({
+                  data: { id: String(skillNode.id), label: skillNode.label, type: skillNode.type }
+                });
+              }
+              newEdges.push({
+                data: { 
+                  id: `e${e.source}-${e.target}`, 
+                  source: String(e.source), 
+                  target: String(e.target),
+                  type: e.type
+                }
+              });
+            });
+          } else if (nodeType === 'Skill') {
+            // Find jobs connected to this skill
+            const jobEdges = allEdges.filter(e => 
+              e.source === nodeId && e.type === 'REQUIRED_BY'
+            );
+            
+            jobEdges.forEach(e => {
+              const jobNode = allNodes.find(n => n.id === e.target);
+              if (jobNode && !cy.getElementById(String(e.target)).length) {
+                newNodes.push({
+                  data: { id: String(jobNode.id), label: jobNode.label, type: jobNode.type }
+                });
+              }
+              newEdges.push({
+                data: { 
+                  id: `e${e.source}-${e.target}`, 
+                  source: String(e.source), 
+                  target: String(e.target),
+                  type: e.type
+                }
+              });
+            });
+          }
+
+          // Add new elements
+          cy.add([...newNodes, ...newEdges]);
+          
+          // Re-layout around the clicked node
+          cy.layout({
+            name: 'concentric',
+            concentric: function(n) {
+              if (n.data('type') === 'Course') return 3;
+              if (n.data('type') === 'Skill') return 2;
+              return 1;
+            },
+            levelWidth: function() { return 1; },
+            padding: 50,
+            animate: true,
+            animationDuration: 300
+          }).run();
+        }
+
+        function collapseNode(nodeId, nodeType) {
+          if (nodeType === 'Course') {
+            // Remove connected skills (and their connected jobs)
+            const skillEdges = allEdges.filter(e => 
+              e.source === nodeId && e.type === 'MATCHES_SKILL'
+            );
+            
+            skillEdges.forEach(e => {
+              const skillId = e.target;
+              // First remove jobs connected to this skill
+              const jobEdges = allEdges.filter(je => 
+                je.source === skillId && je.type === 'REQUIRED_BY'
+              );
+              jobEdges.forEach(je => {
+                cy.getElementById(String(je.target)).remove();
+              });
+              // Then remove the skill
+              cy.getElementById(String(skillId)).remove();
+              expandedNodes.delete(skillId);
+            });
+          } else if (nodeType === 'Skill') {
+            // Remove connected jobs
+            const jobEdges = allEdges.filter(e => 
+              e.source === nodeId && e.type === 'REQUIRED_BY'
+            );
+            jobEdges.forEach(e => {
+              cy.getElementById(String(e.target)).remove();
+            });
+          }
+
+          // Re-layout
+          cy.layout({
+            name: 'concentric',
+            concentric: function(n) {
+              if (n.data('type') === 'Course') return 3;
+              if (n.data('type') === 'Skill') return 2;
+              return 1;
+            },
+            levelWidth: function() { return 1; },
+            padding: 50,
+            animate: true,
+            animationDuration: 300
+          }).run();
+        }
       });
   </script>
 </body>
